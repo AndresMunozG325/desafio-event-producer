@@ -10,6 +10,7 @@
       <th>Number of members</th>
       <th>Type</th>
       <th>Number of concert</th>
+      <th>Total number of people</th>
       
       <th colspan="3"></th>
     </tr>
@@ -23,6 +24,9 @@
         <td><%= group.number_of_members %></td>
         <td><%= group.type_of_band %></td>
         <td><%= group.number_of_concert %></td>
+        <td><%= group.total_number_of_people %></td>
+
+        
         
         <td><%= link_to 'Show', group %></td>
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
