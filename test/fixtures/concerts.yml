@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  concert_name: MyString
+  concert_date: 2021-01-25
+  number_of_people: 1
+  duration: 1
+  Group: one
+
+two:
+  concert_name: MyString
+  concert_date: 2021-01-25
+  number_of_people: 1
+  duration: 1
+  Group: two
