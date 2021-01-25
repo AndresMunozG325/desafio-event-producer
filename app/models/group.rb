@@ -5,4 +5,8 @@ class Group < ApplicationRecord
     validates :type_of_band, presence: true
     
     enum type_of_band: [:Men, :Women, :Band]
+
+    def number_of_concert
+        Concert.where(Group_id: id).count
+    end
 end
