@@ -22,3 +22,26 @@
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
+
+<table>
+  <h3>Data</h3>
+  <tr>
+    <td>Concerts this month </td>
+    <td><%= group.concerts_this_month %></td>
+  </tr>
+  <tr>
+    <td>The last concert </td>
+    <% if @group.the_last_concert != "no debut" %>
+      <td><%= @group.the_last_concert.strftime("%Y-%B-%A") %></td>
+    <% end %>
+  </tr>
+  <tr>
+    <td>Greater amount of public </td>
+    <td><%= group.amount_of_public %></td>
+  </tr>
+  <tr>
+    <td>Longer concert duration </td>
+    <td><%= group.concert_duration %></td>
+  </tr>
+</table>
+
