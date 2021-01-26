@@ -9,6 +9,7 @@
       <th>Debut date</th>
       <th>Number of members</th>
       <th>Type</th>
+      <th>Members</th>
       <th>Number of concert</th>
       <th>Total number of people</th>
       
@@ -23,6 +24,17 @@
         <td><%= group.debut_date %></td>
         <td><%= group.number_of_members %></td>
         <td><%= group.type_of_band %></td>
+        <td>
+          <% group.crews.each do |p| %>  
+            <ul>
+              <li>
+                <%= p.name %>
+              </li>
+            </ul>
+            
+          <%end%>
+
+        </td>
         <td><%= group.number_of_concert %></td>
         <td><%= group.total_number_of_people %></td>
 
