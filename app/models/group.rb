@@ -16,16 +16,23 @@ class Group < ApplicationRecord
     end
 
     def concerts_this_month
-        if self.concerts.count > 0
-            self.concerts.where('extract(year from date) = ?', Time.now.year).where('extract(month from date) = ?', Time.now.month).count 
-        else 
-            return 0  
+        @concerts = Concert.where(Group_id: id)
+        concerts_month = []
+        @concerts.each do |concert|
+            if concert.concert_date > Time.now.beginning_of_month && concert.concert_date < Time.now.end_of_month
+                concerts_month.push(concert.concert_date)
+            end
+        end
+        if concerts_month.any?
+            concerts_month.count
+        else
+            "Don't have concerts this month"
         end
     end
 
     def the_last_concert
         if self.concerts.count > 0
-            self.concerts.order(date: :asc).last.date
+            self.concerts.order(concert_date: :asc).last.concert_date
         else
             "no debut"
         end
