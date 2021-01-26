@@ -4,6 +4,7 @@ class Group < ApplicationRecord
     validates :debut_date, presence: true
     validates :number_of_members, presence: true
     validates :type_of_band, presence: true
+    has_many :crews, dependent: :destroy
     
     enum type_of_band: [:Men, :Women, :Band]
 
